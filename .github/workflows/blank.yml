@@ -37,8 +37,8 @@ jobs:
       
     - name: Docker Push7011347758/test
       run: docker push $RELEASE_IMAGE
-
+      
     - name: Deploy to Kubernetes cluster                                                                            
       uses: kodermax/kubectl-aws-eks@master                   
       with:                                                                                                         
-        args: set image deployment/ucars-ui3-pod app=${{ env.RELEASE_IMAGE }} --record  
+        args: set image deployment/ecomm-app app=${{ env.RELEASE_IMAGE }} --record  
